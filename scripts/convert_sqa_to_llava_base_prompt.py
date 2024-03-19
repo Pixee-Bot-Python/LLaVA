@@ -218,7 +218,8 @@ def create_one_example_gpt4(format, question, context, choice, answer, lecture, 
     return user_prompt, assistant_prompt
 
 
-def build_prompt_chatbot(problems, shot_qids, prompt_format, use_caption=False, options=["A", "B", "C", "D", "E"], is_test=False):
+def build_prompt_chatbot(problems, shot_qids, prompt_format, use_caption=False, options=None, is_test=False):
+    options = ["A", "B", "C", "D", "E"] if options is None else options
     examples = {}
 
     for qid in shot_qids:
